@@ -1,7 +1,6 @@
 # Solution
 employees = {}
-next_emp_id = 101  # Start Employee IDs from E101
-
+next_emp_id = 101
 def generate_employee_id():
     global next_emp_id
     emp_id = f"E{next_emp_id}"
