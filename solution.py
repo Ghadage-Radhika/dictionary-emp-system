@@ -1,15 +1,15 @@
 # Solution
-import uuid
-
 employees = {}
+next_emp_id = 101  # Start Employee IDs from E101
 
 def generate_employee_id():
-    return "E" + str(uuid.uuid4().int)[:5]
+    global next_emp_id
+    emp_id = f"E{next_emp_id}"
+    next_emp_id += 1
+    return emp_id
 
 def add_employee():
     emp_id = generate_employee_id()
-    while emp_id in employees:
-        emp_id = generate_employee_id()
     print(f"Generated Employee ID: {emp_id}")
     name = input("Enter Name: ")
     if not name.replace(" ", "").isalpha():
@@ -112,3 +112,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
